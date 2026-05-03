@@ -33,8 +33,6 @@ git clone git@github.com:Isak-Landin/mcp-docker-engine.git ~/mcp-docker-engine
 cd ~/mcp-docker-engine
 ```
 
-> You can clone to any directory. Replace `~/mcp-docker-engine` with your preferred path — just use that same path in step 5.
-
 ### 2. Install dependencies
 
 ```bash
@@ -68,13 +66,15 @@ DOCKER_MCP_CONFIG=/other/path/mcp-config.json .venv/bin/python3 server.py
 
 ### 4. Verify SSH access
 
+Using the values from your `mcp-config.json`:
+
 ```bash
-ssh -i ~/.ssh/id_rsa ubuntu@your-server.example.com docker ps
+ssh -i <key_path> <user>@<host> docker ps
 ```
 
 ### 5. Register with GitHub Copilot
 
-Use the absolute path to your clone. If you used `~/mcp-docker-engine`, expand it: run `echo ~/mcp-docker-engine` to get the full path, then substitute below.
+Replace `$HOME` below with your actual home directory path (run `echo $HOME`).
 
 #### MCP server config
 
@@ -82,8 +82,8 @@ Use the absolute path to your clone. If you used `~/mcp-docker-engine`, expand i
 
 ```json
 "docker-mcp": {
-  "command": "/your/path/to/mcp-docker-engine/.venv/bin/python3",
-  "args": ["/your/path/to/mcp-docker-engine/server.py"]
+  "command": "$HOME/mcp-docker-engine/.venv/bin/python3",
+  "args": ["$HOME/mcp-docker-engine/server.py"]
 }
 ```
 
@@ -92,8 +92,8 @@ Use the absolute path to your clone. If you used `~/mcp-docker-engine`, expand i
 ```json
 "docker-mcp": {
   "type": "stdio",
-  "command": "/your/path/to/mcp-docker-engine/.venv/bin/python3",
-  "args": ["/your/path/to/mcp-docker-engine/server.py"]
+  "command": "$HOME/mcp-docker-engine/.venv/bin/python3",
+  "args": ["$HOME/mcp-docker-engine/server.py"]
 }
 ```
 
