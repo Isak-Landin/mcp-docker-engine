@@ -1,0 +1,6 @@
+{
+  "host": "your-server.example.com",
+  "user": "ubuntu",
+  "key_path": "~/.ssh/id_rsa",
+  "port": 22
+}
