@@ -75,8 +75,8 @@ Add the `docker-mcp` entry to the `mcpServers` object in your Copilot home's `mc
 
 ```json
 "docker-mcp": {
-  "command": "$HOME/mcp-docker-engine/.venv/bin/python3",
-  "args": ["$HOME/mcp-docker-engine/server.py"]
+  "command": "/home/<your-username>/mcp-docker-engine/.venv/bin/python3",
+  "args": ["/home/<your-username>/mcp-docker-engine/server.py"]
 }
 ```
 
@@ -87,8 +87,8 @@ Add the `docker-mcp` entry to the `servers` object:
 ```json
 "docker-mcp": {
   "type": "stdio",
-  "command": "$HOME/mcp-docker-engine/.venv/bin/python3",
-  "args": ["$HOME/mcp-docker-engine/server.py"]
+  "command": "/home/<your-username>/mcp-docker-engine/.venv/bin/python3",
+  "args": ["/home/<your-username>/mcp-docker-engine/server.py"]
 }
 ```
 
