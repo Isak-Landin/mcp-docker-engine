@@ -94,7 +94,7 @@ Add the `docker-mcp` entry to the `servers` object:
 
 #### Copilot instructions — `copilot-instructions.md`
 
-Add the contents of `copilot-instructions.md` to your Copilot home's `copilot-instructions.md`.
+Add the contents of `copilot-instructions.md` to your Copilot home's `copilot-instructions.md` or `instructions.md`.
 
 ## Notes
 
