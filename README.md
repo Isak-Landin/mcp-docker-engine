@@ -29,8 +29,10 @@ No server-side component required. The MCP runs locally and SSHes into the remot
 ### 1. Install dependencies
 
 ```bash
+sudo apt install python3.12-venv
 cd /home/isakadmin/docker_mcp
-pip3 install -r requirements.txt
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
 ```
 
 ### 2. Configure SSH target
@@ -53,7 +55,7 @@ cp config.example.json config.json
 
 Override config path at runtime:
 ```bash
-DOCKER_MCP_CONFIG=/other/path/config.json python3 server.py
+DOCKER_MCP_CONFIG=/other/path/config.json .venv/bin/python3 server.py
 ```
 
 ### 3. Verify SSH access
@@ -70,7 +72,7 @@ ssh -i ~/.ssh/id_rsa ubuntu@your-server.example.com docker ps
 {
   "mcpServers": {
     "docker-mcp": {
-      "command": "python3",
+      "command": "/home/isakadmin/docker_mcp/.venv/bin/python3",
       "args": ["/home/isakadmin/docker_mcp/server.py"]
     }
   }
@@ -84,7 +86,7 @@ ssh -i ~/.ssh/id_rsa ubuntu@your-server.example.com docker ps
   "servers": {
     "docker-mcp": {
       "type": "stdio",
-      "command": "python3",
+      "command": "/home/isakadmin/docker_mcp/.venv/bin/python3",
       "args": ["/home/isakadmin/docker_mcp/server.py"]
     }
   }
