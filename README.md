@@ -59,10 +59,7 @@ cp mcp-config.example.json mcp-config.json
 }
 ```
 
-Override config path at runtime:
-```bash
-DOCKER_MCP_CONFIG=/other/path/mcp-config.json .venv/bin/python3 server.py
-```
+Insert the `docker-mcp` entry into your Copilot home's `mcp-config.json`, VS Code's `.vscode/mcp.json`, or whichever MCP config your client uses.
 
 ### 4. Verify SSH access
 
