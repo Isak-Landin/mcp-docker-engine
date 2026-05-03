@@ -2,7 +2,7 @@
 setup-repo-git-key.sh
 
 # Docker MCP - SSH connection config (contains credentials)
-mcp-config.json
+config.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

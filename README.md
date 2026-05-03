@@ -44,10 +44,11 @@ python3 -m venv .venv
 ### 3. Configure SSH target
 
 ```bash
-cp mcp-config.example.json mcp-config.json
+cp config.example.json config.json
+# Edit config.json with your server details
 ```
 
-`mcp-config.json` fields:
+`config.json` fields:
 
 ```json
 {
@@ -58,11 +59,9 @@ cp mcp-config.example.json mcp-config.json
 }
 ```
 
-Insert the `docker-mcp` entry into your Copilot home's `mcp-config.json`, VS Code's `.vscode/mcp.json`, or whichever MCP config your client uses.
-
 ### 4. Verify SSH access
 
-Using the values from your `mcp-config.json`:
+Using the values from your `config.json`:
 
 ```bash
 ssh -i <key_path> <user>@<host> docker ps
@@ -72,7 +71,7 @@ ssh -i <key_path> <user>@<host> docker ps
 
 Replace `$HOME` with your actual home directory path (run `echo $HOME`).
 
-#### Copilot CLI
+#### Copilot CLI — `mcp-config.json`
 
 Add the `docker-mcp` entry to the `mcpServers` object in your Copilot home's `mcp-config.json`:
 
@@ -83,9 +82,9 @@ Add the `docker-mcp` entry to the `mcpServers` object in your Copilot home's `mc
 }
 ```
 
-#### VS Code
+#### VS Code — `.vscode/mcp.json`
 
-Add the `docker-mcp` entry to the `servers` object in `.vscode/mcp.json`:
+Add the `docker-mcp` entry to the `servers` object:
 
 ```json
 "docker-mcp": {
@@ -95,9 +94,9 @@ Add the `docker-mcp` entry to the `servers` object in `.vscode/mcp.json`:
 }
 ```
 
-#### Copilot instructions
+#### Copilot instructions — `copilot-instructions.md`
 
-`instructions.md` contains example tool usage for all 26 tools. Add its contents to your existing Copilot home's `copilot-instructions.md`, or use it as-is if you don't have one yet.
+Add the contents of `copilot-instructions.md` to your Copilot home's `copilot-instructions.md`.
 
 ## Notes
 

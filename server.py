@@ -4,7 +4,7 @@
 Run as a stdio MCP server:
     python server.py
 
-Configure SSH target in mcp-config.json (see mcp-config.example.json).
+Configure SSH target in config.json (see config.example.json).
 Override config path via DOCKER_MCP_CONFIG env var.
 """
 
@@ -17,7 +17,7 @@ from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
 
-_DEFAULT_CONFIG = Path(__file__).parent / "mcp-config.json"
+_DEFAULT_CONFIG = Path(__file__).parent / "config.json"
 
 
 # ── SSH helpers ───────────────────────────────────────────────────────────────
@@ -27,7 +27,7 @@ def _cfg() -> dict:
     if not path.exists():
         raise FileNotFoundError(
             f"Config not found: {path}\n"
-            "Copy mcp-config.example.json -> mcp-config.json and fill in your SSH details."
+            "Copy config.example.json -> config.json and fill in your SSH details."
         )
     return json.loads(path.read_text())
 
