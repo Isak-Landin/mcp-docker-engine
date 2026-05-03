@@ -26,16 +26,24 @@ No server-side component required. The MCP runs locally and SSHes into the remot
 
 ## Setup
 
-### 1. Install dependencies
+### 1. Clone the repository
+
+```bash
+git clone git@github.com:Isak-Landin/mcp-docker-engine.git ~/mcp-docker-engine
+cd ~/mcp-docker-engine
+```
+
+> You can clone to any directory. Replace `~/mcp-docker-engine` with your preferred path — just use that same path in step 4.
+
+### 2. Install dependencies
 
 ```bash
 sudo apt install python3.12-venv
-cd /home/isakadmin/docker_mcp
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 ```
 
-### 2. Configure SSH target
+### 3. Configure SSH target
 
 ```bash
 cp config.example.json config.json
@@ -58,13 +66,15 @@ Override config path at runtime:
 DOCKER_MCP_CONFIG=/other/path/config.json .venv/bin/python3 server.py
 ```
 
-### 3. Verify SSH access
+### 4. Verify SSH access
 
 ```bash
 ssh -i ~/.ssh/id_rsa ubuntu@your-server.example.com docker ps
 ```
 
-### 4. Register with GitHub Copilot
+### 5. Register with GitHub Copilot
+
+Use the absolute path to your clone. If you used `~/mcp-docker-engine`, expand it: run `echo ~/mcp-docker-engine` to get the full path, then substitute below.
 
 #### GitHub Copilot CLI (`~/.config/github-copilot/mcp.json`)
 
@@ -72,8 +82,8 @@ ssh -i ~/.ssh/id_rsa ubuntu@your-server.example.com docker ps
 {
   "mcpServers": {
     "docker-mcp": {
-      "command": "/home/isakadmin/docker_mcp/.venv/bin/python3",
-      "args": ["/home/isakadmin/docker_mcp/server.py"]
+      "command": "/your/path/to/mcp-docker-engine/.venv/bin/python3",
+      "args": ["/your/path/to/mcp-docker-engine/server.py"]
     }
   }
 }
@@ -86,8 +96,8 @@ ssh -i ~/.ssh/id_rsa ubuntu@your-server.example.com docker ps
   "servers": {
     "docker-mcp": {
       "type": "stdio",
-      "command": "/home/isakadmin/docker_mcp/.venv/bin/python3",
-      "args": ["/home/isakadmin/docker_mcp/server.py"]
+      "command": "/your/path/to/mcp-docker-engine/.venv/bin/python3",
+      "args": ["/your/path/to/mcp-docker-engine/server.py"]
     }
   }
 }
