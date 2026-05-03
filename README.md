@@ -74,11 +74,11 @@ ssh -i <key_path> <user>@<host> docker ps
 
 ### 5. Register with GitHub Copilot
 
-Replace `$HOME` below with your actual home directory path (run `echo $HOME`).
+Replace `$HOME` with your actual home directory path (run `echo $HOME`).
 
-#### MCP server config
+#### Copilot CLI
 
-**GitHub Copilot CLI** (`~/.config/github-copilot/mcp.json`) — add to your existing `mcpServers` object, or create the file:
+Add the `docker-mcp` entry to the `mcpServers` object in your Copilot home's `mcp-config.json`:
 
 ```json
 "docker-mcp": {
@@ -87,7 +87,9 @@ Replace `$HOME` below with your actual home directory path (run `echo $HOME`).
 }
 ```
 
-**VS Code / Copilot in VS Code** (`.vscode/mcp.json` or user settings) — add to your existing `servers` object, or create the file:
+#### VS Code
+
+Add the `docker-mcp` entry to the `servers` object in `.vscode/mcp.json`:
 
 ```json
 "docker-mcp": {
@@ -99,10 +101,7 @@ Replace `$HOME` below with your actual home directory path (run `echo $HOME`).
 
 #### Copilot instructions
 
-`instructions.md` contains example tool usage for all 26 tools. You can:
-
-- **Add** its contents to your existing Copilot instructions file (e.g. `.github/copilot-instructions.md` or your workspace instructions)
-- **Use it as-is** if you don't have an instructions file yet
+`instructions.md` contains example tool usage for all 26 tools. Add its contents to your existing Copilot home's `copilot-instructions.md`, or use it as-is if you don't have one yet.
 
 ## Notes
 
