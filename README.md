@@ -45,7 +45,6 @@ python3 -m venv .venv
 
 ```bash
 cp mcp-config.example.json mcp-config.json
-# Edit mcp-config.json with your server details
 ```
 
 `mcp-config.json` fields:
