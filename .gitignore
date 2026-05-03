@@ -1,3 +1,6 @@
+# Personal github repo local representation script
+setup-repo-git-key.sh
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
