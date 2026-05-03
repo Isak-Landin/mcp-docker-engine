@@ -69,8 +69,6 @@ ssh -i <key_path> <user>@<host> docker ps
 
 ### 5. Register with GitHub Copilot
 
-Replace `$HOME` with your actual home directory path (run `echo $HOME`).
-
 #### Copilot CLI — `mcp-config.json`
 
 Add the `docker-mcp` entry to the `mcpServers` object in your Copilot home's `mcp-config.json`:
