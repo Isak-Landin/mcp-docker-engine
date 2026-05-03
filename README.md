@@ -33,7 +33,7 @@ git clone git@github.com:Isak-Landin/mcp-docker-engine.git ~/mcp-docker-engine
 cd ~/mcp-docker-engine
 ```
 
-> You can clone to any directory. Replace `~/mcp-docker-engine` with your preferred path — just use that same path in step 4.
+> You can clone to any directory. Replace `~/mcp-docker-engine` with your preferred path — just use that same path in step 5.
 
 ### 2. Install dependencies
 
@@ -76,32 +76,33 @@ ssh -i ~/.ssh/id_rsa ubuntu@your-server.example.com docker ps
 
 Use the absolute path to your clone. If you used `~/mcp-docker-engine`, expand it: run `echo ~/mcp-docker-engine` to get the full path, then substitute below.
 
-#### GitHub Copilot CLI (`~/.config/github-copilot/mcp.json`)
+#### MCP server config
+
+**GitHub Copilot CLI** (`~/.config/github-copilot/mcp.json`) — add to your existing `mcpServers` object, or create the file:
 
 ```json
-{
-  "mcpServers": {
-    "docker-mcp": {
-      "command": "/your/path/to/mcp-docker-engine/.venv/bin/python3",
-      "args": ["/your/path/to/mcp-docker-engine/server.py"]
-    }
-  }
+"docker-mcp": {
+  "command": "/your/path/to/mcp-docker-engine/.venv/bin/python3",
+  "args": ["/your/path/to/mcp-docker-engine/server.py"]
 }
 ```
 
-#### VS Code / Copilot in VS Code (`.vscode/mcp.json` or user settings)
+**VS Code / Copilot in VS Code** (`.vscode/mcp.json` or user settings) — add to your existing `servers` object, or create the file:
 
 ```json
-{
-  "servers": {
-    "docker-mcp": {
-      "type": "stdio",
-      "command": "/your/path/to/mcp-docker-engine/.venv/bin/python3",
-      "args": ["/your/path/to/mcp-docker-engine/server.py"]
-    }
-  }
+"docker-mcp": {
+  "type": "stdio",
+  "command": "/your/path/to/mcp-docker-engine/.venv/bin/python3",
+  "args": ["/your/path/to/mcp-docker-engine/server.py"]
 }
 ```
+
+#### Copilot instructions
+
+`instructions.md` contains example tool usage for all 26 tools. You can:
+
+- **Add** its contents to your existing Copilot instructions file (e.g. `.github/copilot-instructions.md` or your workspace instructions)
+- **Use it as-is** if you don't have an instructions file yet
 
 ## Notes
 
