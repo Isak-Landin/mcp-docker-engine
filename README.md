@@ -1,5 +1,7 @@
 # Docker MCP
 
+> Personal note: Keep in mind that all AIs are essentially retarded geniuses. Refactor instructions as needed if your child acts up.
+ 
 Remote Docker management over SSH — exposed as a local MCP server for GitHub Copilot sessions.
 
 No server-side component required. The MCP runs locally and SSHes into the remote host to execute Docker commands.
