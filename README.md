@@ -46,11 +46,11 @@ python3 -m venv .venv
 ### 3. Configure SSH target
 
 ```bash
-cp config.example.json config.json
-# Edit config.json with your server details
+cp mcp-config.example.json mcp-config.json
+# Edit mcp-config.json with your server details
 ```
 
-`config.json` fields:
+`mcp-config.json` fields:
 
 ```json
 {
@@ -63,7 +63,7 @@ cp config.example.json config.json
 
 Override config path at runtime:
 ```bash
-DOCKER_MCP_CONFIG=/other/path/config.json .venv/bin/python3 server.py
+DOCKER_MCP_CONFIG=/other/path/mcp-config.json .venv/bin/python3 server.py
 ```
 
 ### 4. Verify SSH access

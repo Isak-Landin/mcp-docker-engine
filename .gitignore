@@ -1,6 +1,9 @@
 # Personal github repo local representation script
 setup-repo-git-key.sh
 
+# Docker MCP - SSH connection config (contains credentials)
+mcp-config.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
